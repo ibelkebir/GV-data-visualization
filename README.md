@@ -50,7 +50,7 @@ There will be a period from one month to the next in which the colors transition
 ### Responsiveness and User Interaction 
 When hovering over a state the user will be presented exact information on how many injuries/deaths were caused, how many incidents occurred, and how many incidents were cases with legal/stolen guns.
 
-## References ([D3 Gallery](github.com/d3/d3/wiki/Gallery))
+## References [(D3 Gallery)](github.com/d3/d3/wiki/Gallery)
 <!-- similarity to gallery (http://www.github.com/d3/d3/wiki/Gallery) examples? Which and how? -->
 <!-- Sketch/mock-up/screenshot of your envisioned visualization. -->
 
