@@ -1,6 +1,6 @@
 # cerealKillers <!-- belkebirI_fabihaT_ngR_rachlevskyM -->
 
-Roster: Imad Belkebir (PM), Tabassum Fabiha, Rachel Ng, Mai Rachlevsky
+Imad Belkebir (PM), Tabassum Fabiha, Rachel Ng, Mai Rachlevsky
 
 
 ## [Gun Violence Data](https://www.kaggle.com/jameslko/gun-violence-data)
@@ -36,6 +36,7 @@ Upon hovering over each state the user will be presented statistics of gun viole
 - How has gun violence changed over time? 
 - What impacts gun violence and its frequency? 
 
+
 ## D3 Utilization 
 <!-- Explanation of D3 feature utilization: -->
 
@@ -49,6 +50,7 @@ There will be a period from one month to the next in which the colors transition
 
 ### Responsiveness and User Interaction 
 When hovering over a state the user will be presented exact information on how many injuries/deaths were caused, how many incidents occurred, and how many incidents were cases with legal/stolen guns.
+
 
 ## References [(D3 Gallery)](github.com/d3/d3/wiki/Gallery)
 <!-- similarity to gallery (http://www.github.com/d3/d3/wiki/Gallery) examples? Which and how? -->
