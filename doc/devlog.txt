@@ -23,4 +23,5 @@ rachelN -- 2019-03-27 00:20
 added /doc with images for readme
 
 rachelN -- 2019-03-27 01:00
-updated readme with overview 
+updated readme with overview
+moved devlog to /doc
