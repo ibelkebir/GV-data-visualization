@@ -8,7 +8,7 @@ Roster: Imad Belkebir (PM), Tabassum Fabiha, Rachel Ng, Mai Rachlevsky
 
 Record of over 240k gun violence incidents from 2013 to 2018
 
-### Relevance/significance
+### Relevance / Significance
 
 Gun violence is becoming a more prevalent issue in the US, including school shootings.
 
@@ -37,7 +37,7 @@ Upon hovering over each state the user will be presented statistics of gun viole
 - What impacts gun violence and its frequency? 
 
 ## D3 Utilization 
-<!-- Explanation of D3 feature utilization:
+<!-- Explanation of D3 feature utilization: -->
 
 ### Enter / Exit Selections <!-- enter/exit selections? -->
 
@@ -64,4 +64,4 @@ The graph will depict a time lapse of gun violence incidents from 2013 to 2018.
 
 We will show a choropleth map similar to this one showing frequency of deaths/injuries/incidents per state per month.
 
-<img src="https://github.com/ibelkebeer/cerealKillers/blob/master/doc/%20chloropeth.png?raw=true">
+<img src="https://github.com/ibelkebeer/cerealKillers/blob/master/doc/choropleth.png?raw=true">
