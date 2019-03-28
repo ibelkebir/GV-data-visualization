@@ -67,3 +67,8 @@ The graph will depict a time lapse of gun violence incidents from 2013 to 2018.
 We will show a choropleth map similar to this one showing frequency of deaths/injuries/incidents per state per month.
 
 <img src="https://github.com/ibelkebeer/cerealKillers/blob/master/doc/choropleth.png?raw=true">
+
+
+## Mock-up
+
+<img src="https://github.com/ibelkebeer/cerealKillers/blob/master/doc/map.png?raw=true">
