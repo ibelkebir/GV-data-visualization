@@ -51,6 +51,8 @@ There will be a period from one month to the next in which the colors transition
 ### Responsiveness and User Interaction 
 When hovering over a state the user will be presented exact information on how many injuries/deaths were caused, how many incidents occurred, and how many incidents were cases with legal/stolen guns.
 
+<img src="https://github.com/ibelkebeer/cerealKillers/blob/master/doc/map_hover.gif?raw=true">
+<sub><a href="https://vida.io/documents/4vZ9mRGyepoyQxFcK">Choropleth With Hover</a></sub>
 
 ## References [(D3 Gallery)](github.com/d3/d3/wiki/Gallery)
 <!-- similarity to gallery (http://www.github.com/d3/d3/wiki/Gallery) examples? Which and how? -->
@@ -67,7 +69,6 @@ The graph will depict a time lapse of gun violence incidents from 2013 to 2018.
 We will show a choropleth map similar to this one showing frequency of deaths/injuries/incidents per state per month.
 
 <img src="https://github.com/ibelkebeer/cerealKillers/blob/master/doc/choropleth.png?raw=true">
-
 
 ## Mock-up
 
