@@ -21,7 +21,7 @@ A time lapse of gun violence incidents by state will be shown with the colors tr
 
 <!-- How will user interact with your visualization? -->
 
-Users can choose the type of frequency they want to depict the choropleth by such as if it represent frequency of incidents, injuries, or deaths.
+Users can choose the type of frequency they want to depict the choropleth by such as if it represent frequency of incidents, injuries, or deaths with buttons or a dropdown menu. 
 
 Upon hovering over each state the user will be presented statistics of gun violence from that state.
 
