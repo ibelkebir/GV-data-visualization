@@ -51,7 +51,7 @@ There will be a period from one month to the next in which the colors transition
 ### Responsiveness and User Interaction 
 When hovering over a state the user will be presented exact information on how many injuries/deaths were caused, how many incidents occurred, and how many incidents were cases with legal/stolen guns.
 
-<img src="https://github.com/ibelkebeer/cerealKillers/blob/master/doc/map_hover.gif?raw=true" id="choropleth-hover">
+<img src="https://github.com/ibelkebeer/cerealKillers/blob/master/doc/map_hover.gif?raw=true">
 <sup><a href="https://vida.io/documents/4vZ9mRGyepoyQxFcK">Example of choropleth with hover</a></sup>
 
 ## References [(D3 Gallery)](github.com/d3/d3/wiki/Gallery)
