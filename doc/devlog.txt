@@ -20,8 +20,11 @@ Visualization of gun violence data
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 rachelN -- 2019-03-27 00:20
-added /doc with images for readme
+- added /doc with images for readme
 
 rachelN -- 2019-03-27 01:00
-updated readme with overview
-moved devlog to /doc
+- updated readme with overview
+- moved devlog to /doc
+
+fabihaT -- 2019-03-31 18:40
+- cleaned up original dataset to produce the base dataset
