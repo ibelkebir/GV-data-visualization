@@ -15,6 +15,8 @@ d3.queue()
 
 var path = d3.geoPath()
 
+var fill = d3.scaleLinear().domain([1,25000]).range(["blue", "red"])
+
 function ready (error, data)
 {
     console.log(data);
@@ -24,16 +26,19 @@ function ready (error, data)
 
     var mesh = topojson.mesh(data, data.objects.states, function(a, b)
 			     { return a != b });
-    
+
     svg.append("g")
 	.attr("class", "states")
 	.selectAll("path")
 	.data(states)
 	.enter().append("path")
-	.attr("d", path);
+	.attr("d", path)
+  .style("fill", function(e) {
+    return fill(path.area(e));
+  });
 
     svg.append("path")
 	.attr("class", "state-borders")
 	.attr("d", path(mesh));
-   
+
 };
