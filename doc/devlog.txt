@@ -28,3 +28,6 @@ rachelN -- 2019-03-27 01:00
 
 fabihaT -- 2019-03-31 18:40
 - cleaned up original dataset to produce the base dataset
+
+fabihaT -- 2019-03-31 20:31
+- added in us states 
