@@ -14,3 +14,7 @@
   stroke-linecap: round;
   pointer-events: none;
 }
+
+.legend {
+  font-size: 12px;
+}

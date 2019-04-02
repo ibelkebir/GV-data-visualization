@@ -5,7 +5,7 @@ var width = 800 - margin.left - margin.right;
 var YEAR = 2016;
 var MONTH = 6;
 
-var gunvio_domain = [0, 20, 40, 60, 80, 100, 120];
+var gunvio_domain = [0, 20, 40, 60, 80, 100];
 var gunvio_color = d3.scaleThreshold()
     .domain(gunvio_domain)
     .range(d3.schemeReds[7]);
@@ -28,7 +28,7 @@ var path = d3.geoPath()
 function ready (error, us, murder)
 {
     if (error) throw error;
-    
+
     console.log(us);
     console.log(murder)
 
@@ -47,7 +47,7 @@ function ready (error, us, murder)
 		   })
 
     console.log(gunvioData);
-    
+
     svg.append("g")
 	.attr("class", "states")
 	.selectAll("path")
@@ -66,3 +66,27 @@ function ready (error, us, murder)
 	.attr("d", path(mesh));
 
 };
+
+var legend_labels = ["< 20", "< 40", "< 60", "< 80", "< 100", "< 120"];
+
+var legend = svg.selectAll("g.legend")
+  .data(gunvio_domain)
+  .enter().append("g")
+  .attr("class", "legend");
+
+var ls_w = 30, ls_h = 30;
+
+legend.append("rect")
+  .attr("x", 920)
+  .attr("y", function(d, i){ return height - (i*ls_h) - 2*ls_h;})
+  .attr("width", ls_w)
+  .attr("height", ls_h)
+  .style("fill", function(d) {
+    return gunvio_color( d );
+  })
+  .style("opacity", 0.8);
+
+  legend.append("text")
+  .attr("x", 950)
+  .attr("y", function(d, i){ return height - (i*ls_h) - ls_h - 10;})
+  .text(function(d, i){ return legend_labels[i]; });
