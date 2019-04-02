@@ -31,3 +31,7 @@ fabihaT -- 2019-03-31 18:40
 
 fabihaT -- 2019-03-31 20:31
 - added in us states 
+
+fabihaT -- 2019-04-01 23:48
+- cleaned up code for creating map for better readability
+- made cloropleth map for 2014/01
