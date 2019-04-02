@@ -75,3 +75,11 @@ We will show a choropleth map similar to this one showing frequency of deaths/in
 ## Mock-up
 
 <img src="https://github.com/ibelkebeer/cerealKillers/blob/master/doc/map.png?raw=true">
+
+## Launch Codes
+
+- Move to the root directory of this repository in terminal
+- If you want to run in firefox, enter '''firefox index.html'''
+- If you want to run in chrome, make sure all instances of chrome are closed and enter '''open /Applications/Google\ Chrome.app --args --allow-file-access-from-files'''
+- If you want to run in safari, make sure you have access to the developer tools (Safari > Preferences > Advanced > Show develop in menu bar). Go to the develop bar and click Disable Local File Restrictions. Then you can open the site in the terminalusing '''safari index.html'''
+
