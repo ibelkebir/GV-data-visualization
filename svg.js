@@ -67,7 +67,7 @@ function ready (error, us, murder)
 
 };
 
-var legend_labels = ["< 20", "< 40", "< 60", "< 80", "< 100", "< 120"];
+var legend_labels = ["< 20", "20 - 40", "40 - 60", "60 - 80", "80 - 100", "> 100"];
 
 var legend = svg.selectAll("g.legend")
   .data(gunvio_domain)
@@ -87,6 +87,6 @@ legend.append("rect")
   .style("opacity", 0.8);
 
   legend.append("text")
-  .attr("x", 950)
+  .attr("x", 960)
   .attr("y", function(d, i){ return height - (i*ls_h) - ls_h - 10;})
   .text(function(d, i){ return legend_labels[i]; });
