@@ -17,7 +17,7 @@ var svg = d3.select("svg");
 
 d3.queue()
     .defer(d3.json, "https://d3js.org/us-10m.v2.json")
-    .defer(d3.tsv, "data/data_source0.tsv")
+    .defer(d3.csv, "data/data_source0.csv")
     .await(ready);
 
 var path = d3.geoPath()
