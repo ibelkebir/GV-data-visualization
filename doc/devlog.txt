@@ -44,3 +44,9 @@ rachelN -- 2019-04-01 23:59
 
 imadB -- 2019-04-02 15:00
 - added legend
+
+fabihaT -- 2019-04-01 19:53
+- fixed merge conflicts
+- enabled dropdown ability to choose the year and month of map
+  data
+- reformatted code to fix bugs
