@@ -22,10 +22,20 @@
 div.tooltip {	
     position: absolute;
     text-align: left;
-    padding: 2px;				
+    padding: 10px;	
     font: 16px sans-serif;
     background: white;
     border: 0px;
     border-radius: 4px;
     pointer-events: none;
+    min-width: 175px;
+}
+
+div.tooltip.table {	
+    border: 0px;
+}
+
+#title {
+    font: bold 32px sans-serif;
+    /*text-decoration: underline;*/
 }
