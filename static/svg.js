@@ -13,8 +13,8 @@ butt.addEventListener("click", function(e)
 		      });
 
 var margin = { top: 40, left: 0, right: 0, bottom: 0 };
-var height = 400 - margin.top - margin.bottom;
-var width = 800 - margin.left - margin.right;
+var height = 900 - margin.top - margin.bottom;
+var width = 960 - margin.left - margin.right;
 
 var YEAR;
 var MONTH;
@@ -29,7 +29,7 @@ var gunvioData_injured = d3.map();
 var gunvioData_incidents = d3.map();
 
 var svg = d3.select("svg")
-    //.attr("height", height + margin.top + margin.bottom)
+    .attr("height", height + margin.top + margin.bottom)
     //.attr("width", width + margin.left + margin.right)
     .append("g")
     .attr("transform", "translate(" + margin.left + ", " + margin.top + ")");
@@ -136,20 +136,20 @@ function ready (error, us, murder)
 
 	var ls_w = 20, ls_h = 20;
 
-	legend.append("rect")
-.attr("x", 890)
-.attr("y", function(d, i){ return height - (i*ls_h) - 2*ls_h;})
-.attr("width", ls_w)
-.attr("height", ls_h)
-.style("fill", function(d) {
-		return gunvio_color( d );
-})
-.style("opacity", 0.8);
+    legend.append("rect")
+	.attr("x", 800)
+	.attr("y", function(d, i){ return height - (i*ls_h) - 5*ls_h;})
+	.attr("width", ls_w)
+	.attr("height", ls_h)
+	.style("fill", function(d) {
+	    return gunvio_color( d );
+	})
+	.style("opacity", 0.8);
 
-	legend.append("text")
-.attr("x", 920)
-.attr("y", function(d, i){ return height - (i*ls_h) - ls_h - 10;})
-.text(function(d, i){ return legend_labels[i]; });
+    legend.append("text")
+	.attr("x", 830)
+	.attr("y", function(d, i){ return height - (i*ls_h) - 4*ls_h - 10;})
+	.text(function(d, i){ return legend_labels[i]; });
 
 
 };
