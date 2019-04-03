@@ -12,7 +12,7 @@ butt.addEventListener("click", function(e)
 			  
 		      });
 
-var margin = { top: 0, left: 0, right: 0, bottom: 0 };
+var margin = { top: 40, left: 0, right: 0, bottom: 0 };
 var height = 400 - margin.top - margin.bottom;
 var width = 800 - margin.left - margin.right;
 
@@ -28,11 +28,11 @@ var gunvioData_killed = d3.map();
 var gunvioData_injured = d3.map();
 var gunvioData_incidents = d3.map();
 
-var svg = d3.select("svg");
+var svg = d3.select("svg")
     //.attr("height", height + margin.top + margin.bottom)
     //.attr("width", width + margin.left + margin.right)
-    //.append("g")
-    //.attr("transform", "translate(" + margin.left + ", " + margin.top + ")");
+    .append("g")
+    .attr("transform", "translate(" + margin.left + ", " + margin.top + ")");
 
 // Define the div for the tooltip
 var div = d3.select("body").append("div")	
@@ -73,6 +73,14 @@ function ready (error, us, murder)
 		   })
     //console.log(gunvioData);
     svg.selectAll("g").remove();
+
+    svg.append("g").append("text")
+        .attr("x", (width / 2))             
+        .attr("y", 0 )
+        .attr("text-anchor", "middle")  
+        .style("font-size", "30px") 
+        .style("text-decoration", "underline")  
+        .text("Gun Violence Deaths in the States on " + MONTH + "/" + YEAR);
     
     svg.append("g")
 	.attr("class", "states")
