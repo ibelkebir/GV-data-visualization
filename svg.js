@@ -24,13 +24,20 @@ var gunvio_color = d3.scaleThreshold()
     .domain(gunvio_domain)
     .range(d3.schemeReds[7]);
 
-var gunvioData = d3.map();
+var gunvioData_killed = d3.map();
+var gunvioData_injured = d3.map();
+var gunvioData_incidents = d3.map();
 
 var svg = d3.select("svg");
     //.attr("height", height + margin.top + margin.bottom)
     //.attr("width", width + margin.left + margin.right)
     //.append("g")
     //.attr("transform", "translate(" + margin.left + ", " + margin.top + ")");
+
+// Define the div for the tooltip
+var div = d3.select("body").append("div")	
+    .attr("class", "tooltip")				
+    .style("opacity", 0);
 
 d3.queue()
     .defer(d3.json, "https://d3js.org/us-10m.v2.json")
@@ -59,7 +66,9 @@ function ready (error, us, murder)
 		   {
 		       if (+d.year == YEAR && +d.month == MONTH)
 		       {
-			   gunvioData.set(d.state, +d.n_killed);
+			   gunvioData_killed.set(d.state, +d.n_killed);
+			   gunvioData_injured.set(d.state, +d.n_injured);
+			   gunvioData_incidents.set(d.state, +d.n_injured);
 		       }
 		   })
     //console.log(gunvioData);
@@ -71,14 +80,37 @@ function ready (error, us, murder)
 	.data(states)
 	.enter().append("path")
 	.attr("d", path)
+	.on("mouseover", function(d)
+	    {		
+		div.transition()		
+                    .duration(200)		
+                    .style("opacity", .6);		
+		div.html("state: " + d.properties.name +
+			 "<br> killed: " + gunvioData_killed.get(d.properties.name) +
+			 "<br> injured: " + gunvioData_injured.get(d.properties.name) +
+			 "<br> incidents: " + gunvioData_incidents.get(d.properties.name))	
+                    .style("left", (d3.event.pageX + 10) + "px")		
+                    .style("top", (d3.event.pageY + 10) + "px");	
+            })					
+        .on("mouseout", function(d)
+	    {		
+		div.transition()		
+                    .duration(500)		
+                    .style("opacity", 0);	
+            })
+	.on("mousemove", function(d)
+	    {
+		div.style("left", (d3.event.pageX + 10) + "px")		
+                    .style("top", (d3.event.pageY + 10) + "px");
+	    })
 	.style("fill", function(e)
 	       {
 		   
 		   //console.log(e.properties.name);
 		   
-		   return gunvio_color( e.n_killed = gunvioData.get(e.properties.name) );
-	       });
-    
+		   return gunvio_color( e.n_killed = gunvioData_killed.get(e.properties.name) );
+	       })
+
     svg.append("path")
 	.attr("class", "state-borders")
 	.attr("d", path(mesh));

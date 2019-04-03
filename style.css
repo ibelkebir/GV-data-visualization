@@ -18,3 +18,14 @@
 .legend {
   font-size: 12px;
 }
+
+div.tooltip {	
+    position: absolute;
+    text-align: left;
+    padding: 2px;				
+    font: 16px sans-serif;
+    background: white;
+    border: 0px;
+    border-radius: 4px;
+    pointer-events: none;
+}
