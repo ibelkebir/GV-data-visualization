@@ -84,13 +84,15 @@ function ready (error, us, murder)
 	    {		
 		div.transition()		
                     .duration(200)		
-                    .style("opacity", .6);		
-		div.html("state: " + d.properties.name +
-			 "<br> killed: " + gunvioData_killed.get(d.properties.name) +
-			 "<br> injured: " + gunvioData_injured.get(d.properties.name) +
-			 "<br> incidents: " + gunvioData_incidents.get(d.properties.name))	
+                    .style("opacity", .8);		
+		div.html("<b style='font-size: 18px;'>" + d.properties.name +
+			 "</b><table style='border: none;'><tr><td>Killed: " + gunvioData_killed.get(d.properties.name) +
+			 "</td><td>Injured: " + gunvioData_injured.get(d.properties.name) +
+			 "</td></tr><tr><td>Incidents: " + gunvioData_incidents.get(d.properties.name)+"</td></tr></table>")
                     .style("left", (d3.event.pageX + 10) + "px")		
-                    .style("top", (d3.event.pageY + 10) + "px");	
+                    .style("top", (d3.event.pageY + 10) + "px")	
+                    .style("padding", (10) + "px")
+                    .style("min-width", (175) + "px")	
             })					
         .on("mouseout", function(d)
 	    {		

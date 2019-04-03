@@ -54,5 +54,6 @@ fabihaT -- 2019-04-02 19:53
 fabihaT -- 2019-04-02 22:26
 - finished adding in hovering mechanism
 
-rachelN -- 2019-04-02 23:10
-- flask works now
+rachelN -- 2019-04-02 23:50
+- flask works now - route to /static
+- made tooltips / hover thing clearer
