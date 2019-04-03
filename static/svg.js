@@ -12,7 +12,7 @@ butt.addEventListener("click", function(e)
 
 		      });
 
-var margin = { top: 40, left: 0, right: 0, bottom: 0 };
+var margin = { top: 75, left: 0, right: 0, bottom: 0 };
 var height = 900 - margin.top - margin.bottom;
 var width = 960 - margin.left - margin.right;
 
@@ -77,10 +77,9 @@ function ready (error, us, murder)
 
     svg.append("g").append("text")
         .attr("x", (width / 2))             
-        .attr("y", 0 )
+        .attr("y", -15 + "px" )
+        .attr("id","title")
         .attr("text-anchor", "middle")  
-        .style("font-size", "30px") 
-        .style("text-decoration", "underline")  
         .text("Gun Violence Deaths in the States on " + MONTH + "/" + YEAR);
     
     svg.append("g")
@@ -95,13 +94,11 @@ function ready (error, us, murder)
                     .duration(200)
                     .style("opacity", .8);
 		div.html("<b style='font-size: 18px;'>" + d.properties.name +
-			 "</b><table style='border: none;'><tr><td>Killed: " + gunvioData_killed.get(d.properties.name) +
+			 "</b><table><tr><td>Killed: " + gunvioData_killed.get(d.properties.name) +
 			 "</td><td>Injured: " + gunvioData_injured.get(d.properties.name) +
 			 "</td></tr><tr><td>Incidents: " + gunvioData_incidents.get(d.properties.name)+"</td></tr></table>")
                     .style("left", (d3.event.pageX + 10) + "px")
-                    .style("top", (d3.event.pageY + 10) + "px")
-                    .style("padding", (10) + "px")
-                    .style("min-width", (175) + "px")
+                    .style("top", (d3.event.pageY + 10) + "px");
             })
         .on("mouseout", function(d)
 	    {
@@ -137,18 +134,18 @@ function ready (error, us, murder)
 	var ls_w = 20, ls_h = 20;
 
     legend.append("rect")
-	.attr("x", 800)
-	.attr("y", function(d, i){ return height - (i*ls_h) - 5*ls_h;})
+	.attr("x", 920)
+	.attr("y", function(d, i){ return height - 200 - (i*ls_h) - 5*ls_h;})
 	.attr("width", ls_w)
 	.attr("height", ls_h)
 	.style("fill", function(d) {
 	    return gunvio_color( d );
 	})
-	.style("opacity", 0.8);
+	.style("opacity", 1);
 
     legend.append("text")
-	.attr("x", 830)
-	.attr("y", function(d, i){ return height - (i*ls_h) - 4*ls_h - 10;})
+	.attr("x", 950)
+	.attr("y", function(d, i){ return height - 200 - (i*ls_h) - 4*ls_h - 10 + 4;})
 	.text(function(d, i){ return legend_labels[i]; });
 
 
