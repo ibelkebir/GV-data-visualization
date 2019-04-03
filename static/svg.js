@@ -9,7 +9,7 @@ butt.addEventListener("click", function(e)
 			      .defer(d3.json, "https://d3js.org/us-10m.v2.json")
 			      .defer(d3.csv, "static/data/data_source0.csv")
 			      .await(ready);
-			  
+
 		      });
 
 var margin = { top: 0, left: 0, right: 0, bottom: 0 };
@@ -35,8 +35,8 @@ var svg = d3.select("svg");
     //.attr("transform", "translate(" + margin.left + ", " + margin.top + ")");
 
 // Define the div for the tooltip
-var div = d3.select("body").append("div")	
-    .attr("class", "tooltip")				
+var div = d3.select("body").append("div")
+    .attr("class", "tooltip")
     .style("opacity", 0);
 
 d3.queue()
@@ -49,19 +49,19 @@ var path = d3.geoPath()
 function ready (error, us, murder)
 {
     if (error) throw error;
-    
+
     //console.log(us);
     //console.log(murder)
 
     YEAR = years.value;
     MONTH = months.value;
-    
+
     var states = topojson.feature(us, us.objects.states).features;
     //console.log(states);
-    
+
     var mesh = topojson.mesh(us, us.objects.states, function(a, b)
 			     { return a != b });
-    
+
     murder.forEach(function(d)
 		   {
 		       if (+d.year == YEAR && +d.month == MONTH)
@@ -73,7 +73,7 @@ function ready (error, us, murder)
 		   })
     //console.log(gunvioData);
     svg.selectAll("g").remove();
-    
+
     svg.append("g")
 	.attr("class", "states")
 	.selectAll("path")
@@ -81,35 +81,35 @@ function ready (error, us, murder)
 	.enter().append("path")
 	.attr("d", path)
 	.on("mouseover", function(d)
-	    {		
-		div.transition()		
-                    .duration(200)		
-                    .style("opacity", .8);		
+	    {
+		div.transition()
+                    .duration(200)
+                    .style("opacity", .8);
 		div.html("<b style='font-size: 18px;'>" + d.properties.name +
 			 "</b><table style='border: none;'><tr><td>Killed: " + gunvioData_killed.get(d.properties.name) +
 			 "</td><td>Injured: " + gunvioData_injured.get(d.properties.name) +
 			 "</td></tr><tr><td>Incidents: " + gunvioData_incidents.get(d.properties.name)+"</td></tr></table>")
-                    .style("left", (d3.event.pageX + 10) + "px")		
-                    .style("top", (d3.event.pageY + 10) + "px")	
+                    .style("left", (d3.event.pageX + 10) + "px")
+                    .style("top", (d3.event.pageY + 10) + "px")
                     .style("padding", (10) + "px")
-                    .style("min-width", (175) + "px")	
-            })					
+                    .style("min-width", (175) + "px")
+            })
         .on("mouseout", function(d)
-	    {		
-		div.transition()		
-                    .duration(500)		
-                    .style("opacity", 0);	
+	    {
+		div.transition()
+                    .duration(500)
+                    .style("opacity", 0);
             })
 	.on("mousemove", function(d)
 	    {
-		div.style("left", (d3.event.pageX + 10) + "px")		
+		div.style("left", (d3.event.pageX + 10) + "px")
                     .style("top", (d3.event.pageY + 10) + "px");
 	    })
 	.style("fill", function(e)
 	       {
-		   
+
 		   //console.log(e.properties.name);
-		   
+
 		   return gunvio_color( e.n_killed = gunvioData_killed.get(e.properties.name) );
 	       })
 
@@ -125,22 +125,22 @@ function ready (error, us, murder)
 	.enter().append("g")
 	.attr("class", "legend");
 
-    var ls_w = 30, ls_h = 30;
+	var ls_w = 20, ls_h = 20;
 
-    legend.append("rect")
-	.attr("x", 920)
-	.attr("y", function(d, i){ return height - (i*ls_h) - 2*ls_h;})
-	.attr("width", ls_w)
-	.attr("height", ls_h)
-	.style("fill", function(d) {
-	    return gunvio_color( d );
-	})
-	.style("opacity", 0.8);
+	legend.append("rect")
+.attr("x", 890)
+.attr("y", function(d, i){ return height - (i*ls_h) - 2*ls_h;})
+.attr("width", ls_w)
+.attr("height", ls_h)
+.style("fill", function(d) {
+		return gunvio_color( d );
+})
+.style("opacity", 0.8);
 
-    legend.append("text")
-	.attr("x", 960)
-	.attr("y", function(d, i){ return height - (i*ls_h) - ls_h - 10;})
-	.text(function(d, i){ return legend_labels[i]; });
+	legend.append("text")
+.attr("x", 920)
+.attr("y", function(d, i){ return height - (i*ls_h) - ls_h - 10;})
+.text(function(d, i){ return legend_labels[i]; });
 
-    
+
 };
