@@ -1,4 +1,5 @@
 var years = document.getElementById("years");
+var months = document.getElementById("months")
 var butt = document.getElementById("butt");
 console.log(years.value);
 
@@ -15,10 +16,8 @@ var margin = { top: 0, left: 0, right: 0, bottom: 0 };
 var height = 400 - margin.top - margin.bottom;
 var width = 800 - margin.left - margin.right;
 
-var trans;
-
-var YEAR = years.value;
-var MONTH = 6;
+var YEAR;
+var MONTH;
 
 var gunvio_domain = [0, 20, 40, 60, 80, 100];
 var gunvio_color = d3.scaleThreshold()
@@ -48,6 +47,7 @@ function ready (error, us, murder)
     //console.log(murder)
 
     YEAR = years.value;
+    MONTH = months.value;
     
     var states = topojson.feature(us, us.objects.states).features;
     //console.log(states);
@@ -84,58 +84,29 @@ function ready (error, us, murder)
 	.attr("d", path(mesh));
 
 
+    var legend_labels = ["< 20", "20 - 40", "40 - 60", "60 - 80", "80 - 100", "> 100"];
+
+    var legend = svg.selectAll("g.legend")
+	.data(gunvio_domain)
+	.enter().append("g")
+	.attr("class", "legend");
+
+    var ls_w = 30, ls_h = 30;
+
+    legend.append("rect")
+	.attr("x", 920)
+	.attr("y", function(d, i){ return height - (i*ls_h) - 2*ls_h;})
+	.attr("width", ls_w)
+	.attr("height", ls_h)
+	.style("fill", function(d) {
+	    return gunvio_color( d );
+	})
+	.style("opacity", 0.8);
+
+    legend.append("text")
+	.attr("x", 960)
+	.attr("y", function(d, i){ return height - (i*ls_h) - ls_h - 10;})
+	.text(function(d, i){ return legend_labels[i]; });
+
+    
 };
-
-function update(error, murder)
-{
-    if (error) throw error;
-
-    YEAR = years.value;
-    
-    murder.forEach(function(d)
-		   {
-		       if (+d.year == YEAR && +d.month == MONTH)
-		       {
-			   gunvioData.set(d.state, +d.n_killed);
-		       }
-		   });
-
-    svg.select("path").remove()
-    svg.enter().append("path")
-	.attr("d", path)
-	.style("fill", function(e)
-	       {	   
-		   //console.log(e.properties.name);
-		   
-		   return gunvio_color( e.n_killed = gunvioData.get(e.properties.name) );
-	       });
-    
-
-    
-    console.log(gunvioData);
-    
-}
-
-var legend_labels = ["< 20", "20 - 40", "40 - 60", "60 - 80", "80 - 100", "> 100"];
-
-var legend = svg.selectAll("g.legend")
-  .data(gunvio_domain)
-  .enter().append("g")
-  .attr("class", "legend");
-
-var ls_w = 30, ls_h = 30;
-
-legend.append("rect")
-  .attr("x", 920)
-  .attr("y", function(d, i){ return height - (i*ls_h) - 2*ls_h;})
-  .attr("width", ls_w)
-  .attr("height", ls_h)
-  .style("fill", function(d) {
-    return gunvio_color( d );
-  })
-  .style("opacity", 0.8);
-
-  legend.append("text")
-  .attr("x", 960)
-  .attr("y", function(d, i){ return height - (i*ls_h) - ls_h - 10;})
-  .text(function(d, i){ return legend_labels[i]; });
