@@ -6,7 +6,7 @@ app.static_url_path='/static'
 
 @app.route('/')
 def index():
-    return render_template('temp.html')
+    return render_template('index.html')
 
 
 if __name__ == "__main__":
