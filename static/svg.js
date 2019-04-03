@@ -7,7 +7,7 @@ butt.addEventListener("click", function(e)
 		      {
 			  d3.queue()
 			      .defer(d3.json, "https://d3js.org/us-10m.v2.json")
-			      .defer(d3.csv, "data/data_source0.csv")
+			      .defer(d3.csv, "/static/data/data_source0.csv")
 			      .await(ready);
 			  
 		      });
@@ -41,7 +41,7 @@ var div = d3.select("body").append("div")
 
 d3.queue()
     .defer(d3.json, "https://d3js.org/us-10m.v2.json")
-    .defer(d3.csv, "data/data_source0.csv")
+    .defer(d3.csv, "/static/data/data_source0.csv")
     .await(ready);
 
 var path = d3.geoPath()
