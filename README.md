@@ -8,12 +8,19 @@ Imad Belkebir (PM), Tabassum Fabiha, Rachel Ng, Mai Rachlevsky
 
 Record of over 240k gun violence incidents from 2013 to 2018
 
-We'll be parsing the data later because it's 150 mb, but you can [download it here](https://www.kaggle.com/jameslko/gun-violence-data) and add it to your data folder in the repo. 
+We've parsed the data so it counts in terms of states per month rather than by individual incidents. 
 
-### Relevance / Significance
+<sup>~~We'll be parsing the data later because it's 150 mb, but you can [download it here](https://www.kaggle.com/jameslko/gun-violence-data) and add it to your data folder in the repo.~~</sup>
+
+## <sub>Relevance / Significance</sub>
 
 Gun violence is becoming a more prevalent issue in the US, including school shootings.
 
+### [2014 - 2018 State Population Estimates](https://www.census.gov/newsroom/press-kits/2018/pop-estimates-national-state.html)
+
+Population estimates for each state made by the US Census Bureau from 2014-2018. 
+
+The data has been parsed to remove data for other years, and will be used to determine the number of people shot in proportion to the (estimated) population of the state.
 
 ## Visualization of Data and User Interaction
 
