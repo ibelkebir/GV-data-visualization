@@ -1,7 +1,6 @@
 var years = document.getElementById("years");
 var months = document.getElementById("months")
 var butt = document.getElementById("butt");
-console.log(years.value);
 
 butt.addEventListener("click", function(e)
 		      {
@@ -76,12 +75,12 @@ function ready (error, us, murder)
 
 
     svg.append("g").append("text")
-        .attr("x", (width / 2))             
+        .attr("x", (width / 2))
         .attr("y", -15 + "px" )
         .attr("id","title")
-        .attr("text-anchor", "middle")  
+        .attr("text-anchor", "middle")
         .text("Gun Violence Deaths in the States on " + MONTH + "/" + YEAR);
-    
+
     svg.append("g")
 	.attr("class", "states")
 	.selectAll("path")
@@ -148,5 +147,37 @@ function ready (error, us, murder)
 	.attr("y", function(d, i){ return height - 200 - (i*ls_h) - 4*ls_h - 10 + 4;})
 	.text(function(d, i){ return legend_labels[i]; });
 
-
 };
+
+var timer;
+var playing = false;
+var year_vals = ["2014","2015","2016","2017"];
+var month_vals = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+document.getElementById('play').addEventListener('click', function(e) {
+	if(playing) {
+		clearInterval(timer);
+		document.getElementById('play').innerHTML = "play";
+		playing = false;
+	}else{
+		playing = true;
+		document.getElementById('play').innerHTML = "pause";
+		timer = setInterval(function(d) {
+			var YEAR = parseInt(years.value);
+			var MONTH = parseInt(months.value);
+			if(MONTH < 12){
+				months.value = (MONTH + 1) + "";
+			}else{
+				months.value = "1";
+				if(YEAR == 2017){
+					years.value = "2014";
+				}else{
+					years.value = (YEAR + 1) + "";
+				}
+			}
+			d3.queue()
+					.defer(d3.json, "https://d3js.org/us-10m.v2.json")
+					.defer(d3.csv, "static/data/data_source0.csv")
+					.await(ready);
+		}, 1000);
+	}
+});
