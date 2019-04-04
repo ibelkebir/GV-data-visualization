@@ -57,3 +57,6 @@ fabihaT -- 2019-04-02 22:26
 rachelN -- 2019-04-02 23:50
 - flask works now - route to /static
 - made tooltips / hover thing clearer
+
+imadB -- 2019-04-04 13:20
+- added timeline that cycles through months and years
