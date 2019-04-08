@@ -1,6 +1,7 @@
 var years = document.getElementById("years");
 var months = document.getElementById("months")
 var butt = document.getElementById("butt");
+var type = document.getElementById("type");
 
 butt.addEventListener("click", function(e)
 		      {
@@ -22,6 +23,18 @@ var gunvio_domain = [0, 20, 40, 60, 80, 100];
 var gunvio_color = d3.scaleThreshold()
     .domain(gunvio_domain)
     .range(d3.schemeReds[7]);
+
+
+var gunvio_injured_domain = [0, 80, 160, 240, 320, 400, 480];
+var gunvio_injured_color = d3.scaleThreshold()
+    .domain(gunvio_injured_domain)
+    .range(d3.schemeReds[8]);
+
+var gunvio_incidents_domain = [0, 100, 200, 300, 400, 500];
+var gunvio_incidents_color = d3.scaleThreshold()
+    .domain(gunvio_injured_domain)
+    .range(d3.schemeReds[7]);
+
 
 var gunvioData_killed = d3.map();
 var gunvioData_injured = d3.map();
@@ -73,14 +86,25 @@ function ready (error, us, murder)
     //console.log(gunvioData);
     svg.selectAll("g").remove();
 
-
-    svg.append("g").append("text")
-        .attr("x", (width / 2))
-        .attr("y", -15 + "px" )
-        .attr("id","title")
-        .attr("text-anchor", "middle")
-        .text("Gun Violence Deaths in the States on " + MONTH + "/" + YEAR);
-
+    base0 = svg.append("g").append("text")
+            .attr("x", (width / 2))
+            .attr("y", -15 + "px" )
+            .attr("id","title")
+            .attr("text-anchor", "middle")
+    
+    if (type.value == "killed")
+    {
+	base0.text("Gun Violence Deaths in the States on " + MONTH + "/" + YEAR);
+    }
+    else if (type.value == "indicents")
+    {
+	base0.text("Gun Violence Incidents in the States on " + MONTH + "/" + YEAR);
+    }
+    else
+    {
+	base0.text("Gun Violence Injuries in the States on " + MONTH + "/" + YEAR);
+    }
+    
     svg.append("g")
 	.attr("class", "states")
 	.selectAll("path")
@@ -117,10 +141,18 @@ function ready (error, us, murder)
 	    })
 	.style("fill", function(e)
 	       {
-
-		   //console.log(e.properties.name);
-
-		   return gunvio_color( e.n_killed = gunvioData_killed.get(e.properties.name) );
+		   if (type.value == "killed")
+		   {
+		       return gunvio_color( e.n_killed = gunvioData_killed.get(e.properties.name) );
+		   }
+		   else if (type.value == "incidents")
+		   {
+		       return gunvio_incidents_color( e.n_incidents = gunvioData_incidents.get(e.properties.name) );
+		   }
+		   else
+		   {
+		       return gunvio_injured_color( e.n_injured = gunvioData_injured.get(e.properties.name) );
+		   }
 	       })
 
     svg.append("path")
@@ -128,24 +160,66 @@ function ready (error, us, murder)
 	.attr("d", path(mesh));
 
 
-    var legend_labels = ["< 20", "20 - 40", "40 - 60", "60 - 80", "80 - 100", "> 100"];
+    var legend_labels;
+
+    if (type.value == "killed")
+    {
+	legend_labels = ["< 20", "20 - 40", "40 - 60", "60 - 80", "80 - 100", "> 100"];
+    }
+    else if (type.value == "incidents")
+    {
+	legend_labels = ["< 100", "100 - 200", "200 - 300", "300 - 400", "400 - 500", "> 500"];
+    }
+    else
+    {
+	legend_labels = ["< 80", "80 - 160", "160 - 240", "240 - 320", "320 - 400", "400 - 480", "> 480"];
+    }
 
     var legend = svg.selectAll("g.legend")
-	.data(gunvio_domain)
-	.enter().append("g")
+
+    if (type.value == "killed")
+    {
+	legend = legend.data(gunvio_domain)
+    }
+    else if (type.value == "incidents")
+    {
+	legend = legend.data(gunvio_incidents_domain)
+    }
+    else
+    {
+	legend = legend.data(gunvio_injured_domain)
+    }
+
+    legend = legend.enter().append("g")
 	.attr("class", "legend");
+    
+    var ls_w = 20, ls_h = 20;
 
-	var ls_w = 20, ls_h = 20;
-
-    legend.append("rect")
+    rect = legend.append("rect")
 	.attr("x", 850)
 	.attr("y", function(d, i){ return height - 200 - (i*ls_h) - 5*ls_h;})
 	.attr("width", ls_w)
 	.attr("height", ls_h)
-	.style("fill", function(d) {
+
+    if (type.value == "killed")
+    {
+	rect = rect.style("fill", function(d) {
 	    return gunvio_color( d );
 	})
-	.style("opacity", 1);
+    }
+    else if (type.value == "incidents")
+    {
+	rect = rect.style("fill", function(d) {
+	    return gunvio_incidents_color( d );
+	})
+    }
+    else
+    {
+	rect = rect.style("fill", function(d) {
+	    return gunvio_injured_color( d );
+	})
+    }
+	rect.style("opacity", 1);
 
     legend.append("text")
 	.attr("x", 880)
