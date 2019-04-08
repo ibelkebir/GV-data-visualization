@@ -32,7 +32,7 @@ var gunvio_injured_color = d3.scaleThreshold()
 
 var gunvio_incidents_domain = [0, 100, 200, 300, 400, 500];
 var gunvio_incidents_color = d3.scaleThreshold()
-    .domain(gunvio_injured_domain)
+    .domain(gunvio_incidents_domain)
     .range(d3.schemeReds[7]);
 
 
@@ -96,7 +96,7 @@ function ready (error, us, murder)
     {
 	base0.text("Gun Violence Deaths in the States on " + MONTH + "/" + YEAR);
     }
-    else if (type.value == "indicents")
+    else if (type.value == "incidents")
     {
 	base0.text("Gun Violence Incidents in the States on " + MONTH + "/" + YEAR);
     }
