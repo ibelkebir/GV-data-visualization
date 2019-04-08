@@ -106,6 +106,11 @@ We will show a choropleth map similar to this one showing frequency of deaths/in
     (venv) $ pip install --upgrade pip
     (venv) $ pip install -r requirements.txt
     ```
+    You can also manually install the dependencies with
+    ```
+    (venv) $ pip install flask
+    (venv) $ pip install wheel
+    ```
 
 5. Run the python file (starting the Flask server)
     ```
