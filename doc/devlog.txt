@@ -32,6 +32,9 @@ maiR -- 2019-03-27 00:35
 imadB -- 2019-03-27 04:00
 - created mock-up and added to readme
 
+rachelN -- 2019-03-28 23:59
+- resolved feedback issues
+
 maiR -- 2019-03-30 10:42
 - Worked on resolving feedback issues 
 
