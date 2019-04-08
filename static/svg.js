@@ -80,16 +80,16 @@ function ready (error, us, murder)
 		       {
 			   gunvioData_killed.set(d.state, +d.n_killed);
 			   gunvioData_injured.set(d.state, +d.n_injured);
-			   gunvioData_incidents.set(d.state, +d.n_injured);
+			   gunvioData_incidents.set(d.state, +d.incidents);
 		       }
 		   })
     //console.log(gunvioData);
     svg.selectAll("g").remove();
 
-base0 = document.getElementById("title")
-
-  console.log(base0)
-  console.log(base0.innerHTML)
+    base0 = document.getElementById("title")
+    
+    console.log(base0)
+    console.log(base0.innerHTML)
 
 if (type.value == "killed"){
 	base0.innerHTML = "Gun Violence Deaths in the States on " + MONTH + "/" + YEAR;
@@ -144,7 +144,7 @@ else if (type.value == "injuries"){
 		   }
 		   else if (type.value == "incidents")
 		   {
-		       return gunvio_incidents_color( e.n_incidents = gunvioData_incidents.get(e.properties.name) );
+		       return gunvio_incidents_color( e.incidents = gunvioData_incidents.get(e.properties.name) );
 		   }
 		   else
 		   {
