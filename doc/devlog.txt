@@ -72,8 +72,14 @@ rachelN -- 2019-04-02 23:50
 maiR -- 2019-04-02 21:52
 - Found dataset for population and converted to csv
 
+rachelN -- 2019-04-03 16:00
+- css from javascript to style.css
+
 imadB -- 2019-04-04 13:20
 - added timeline that cycles through months and years
+
+rachelN -- 2019-04-04 12:30
+- cleaned up (different) population dataset from census, made into csv
 
 maiR -- 2019-04-07 22:40
 - Worked on adding the urls for the gun laws of each state
