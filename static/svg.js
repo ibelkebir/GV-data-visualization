@@ -112,7 +112,7 @@ function ready (error, us, murder)
 	    })
 	.on("click", function(d)
 	    {
-		
+
 		window.open("https://lawcenter.giffords.org/category/" + d.properties.name.replace(" ", "-"), 'gun laws');
 	    })
 	.style("fill", function(e)
@@ -156,33 +156,129 @@ function ready (error, us, murder)
 
 var timer;
 var playing = false;
-var year_vals = ["2014","2015","2016","2017"];
-var month_vals = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-document.getElementById('play').addEventListener('click', function(e) {
-    if(playing) {
-	clearInterval(timer);
-	document.getElementById('play').innerHTML = "play";
-	playing = false;
-    }else{
+
+document.getElementById("fbw").addEventListener('click', function(e) {
 	playing = true;
-	document.getElementById('play').innerHTML = "pause";
+	clearInterval(timer);
+	//document.getElementById('play').select('i').attr('class', 'fa fa-pause') ;
 	timer = setInterval(function(d) {
-	    var YEAR = parseInt(years.value);
-	    var MONTH = parseInt(months.value);
-	    if(MONTH < 12){
-		months.value = (MONTH + 1) + "";
-	    }else{
-		months.value = "1";
-		if(YEAR == 2017){
-		    years.value = "2014";
+		var YEAR = parseInt(years.value);
+		var MONTH = parseInt(months.value);
+		if(MONTH > 1){
+			months.value = (MONTH - 1) + "";
 		}else{
-		    years.value = (YEAR + 1) + "";
+			months.value = "12";
+			if(YEAR == 2014){
+				years.value = "2017";
+			}else{
+				years.value = (YEAR - 1) + "";
+			}
 		}
-	    }
-	    d3.queue()
-		.defer(d3.json, "https://d3js.org/us-10m.v2.json")
-		.defer(d3.csv, "static/data/data_source0.csv")
-		.await(ready);
-	}, 1000);
-    }
+		d3.queue()
+				.defer(d3.json, "https://d3js.org/us-10m.v2.json")
+				.defer(d3.csv, "static/data/data_source0.csv")
+				.await(ready);
+	}, 200);
+});
+
+document.getElementById("bw").addEventListener('click', function(e) {
+	playing = true;
+	clearInterval(timer);
+	//document.getElementById('play').select('i').attr('class', 'fa fa-pause') ;
+	timer = setInterval(function(d) {
+		var YEAR = parseInt(years.value);
+		var MONTH = parseInt(months.value);
+		if(MONTH > 1){
+			months.value = (MONTH - 1) + "";
+		}else{
+			months.value = "12";
+			if(YEAR == 2014){
+				years.value = "2017";
+			}else{
+				years.value = (YEAR - 1) + "";
+			}
+		}
+		d3.queue()
+				.defer(d3.json, "https://d3js.org/us-10m.v2.json")
+				.defer(d3.csv, "static/data/data_source0.csv")
+				.await(ready);
+	}, 500);
+});
+
+document.getElementById("fw").addEventListener('click', function(e) {
+	playing = true;
+	clearInterval(timer);
+	//document.getElementById('play').select('i').attr('class', 'fa fa-pause') ;
+	timer = setInterval(function(d) {
+		var YEAR = parseInt(years.value);
+		var MONTH = parseInt(months.value);
+		if(MONTH < 12){
+			months.value = (MONTH + 1) + "";
+		}else{
+			months.value = "1";
+			if(YEAR == 2017){
+				years.value = "2014";
+			}else{
+				years.value = (YEAR + 1) + "";
+			}
+		}
+		d3.queue()
+				.defer(d3.json, "https://d3js.org/us-10m.v2.json")
+				.defer(d3.csv, "static/data/data_source0.csv")
+				.await(ready);
+	}, 500);
+});
+
+document.getElementById("ffw").addEventListener('click', function(e) {
+	playing = true;
+	clearInterval(timer);
+	//document.getElementById('play').select('i').attr('class', 'fa fa-pause') ;
+	timer = setInterval(function(d) {
+		var YEAR = parseInt(years.value);
+		var MONTH = parseInt(months.value);
+		if(MONTH < 12){
+			months.value = (MONTH + 1) + "";
+		}else{
+			months.value = "1";
+			if(YEAR == 2017){
+				years.value = "2014";
+			}else{
+				years.value = (YEAR + 1) + "";
+			}
+		}
+		d3.queue()
+				.defer(d3.json, "https://d3js.org/us-10m.v2.json")
+				.defer(d3.csv, "static/data/data_source0.csv")
+				.await(ready);
+	}, 200);
+});
+
+document.getElementById("play").addEventListener('click', function(e) {
+	if(playing) {
+		clearInterval(timer);
+		document.getElementById('play').select('i').attr('class', 'fa fa-play');
+		playing = false;
+	}else{
+		playing = true;
+		clearInterval(timer);
+		//console.log(document.getElementById('i').select('i').attr('class', 'fa fa-pause') ;
+		timer = setInterval(function(d) {
+			var YEAR = parseInt(years.value);
+			var MONTH = parseInt(months.value);
+			if(MONTH < 12){
+				months.value = (MONTH + 1) + "";
+			}else{
+				months.value = "1";
+				if(YEAR == 2017){
+					years.value = "2014";
+				}else{
+					years.value = (YEAR + 1) + "";
+				}
+			}
+			d3.queue()
+					.defer(d3.json, "https://d3js.org/us-10m.v2.json")
+					.defer(d3.csv, "static/data/data_source0.csv")
+					.await(ready);
+		}, 1000);
+	}
 });
