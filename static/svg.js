@@ -86,19 +86,26 @@ function ready (error, us, murder)
     //console.log(gunvioData);
     svg.selectAll("g").remove();
 
+console.log(MONTH)
+console.log(YEAR)
+  console.log(months)
+  console.log(months.value)
+  console.log(months.innerText)
+
 base0 = document.getElementById("title")
 
   console.log(base0)
-  console.log(base0.innerHTML)
+
+  var month_names = ['','January','February','March','April','May','June','July','August','September','October','November','December']
 
 if (type.value == "killed"){
-	base0.innerHTML = "Gun Violence Deaths in the States on " + MONTH + "/" + YEAR;
+	base0.innerHTML = "Gun Violence Deaths in the States<div class='dates'>" + month_names[MONTH] + " " + YEAR + "</div>";
 }
 else if (type.value == "incidents"){
-  base0.innerHTML = "Gun Violence Incidents in the States on " + MONTH + "/" + YEAR;
+  base0.innerHTML = "Gun Violence Incidents in the States<div class='dates'>" + month_names[MONTH] + " " + YEAR + "</div>";
 }
 else if (type.value == "injuries"){
-	base0.innerHTML = "Gun Violence Injuries in the States on " + MONTH + "/" + YEAR;
+	base0.innerHTML = "Gun Violence Injuries in the States<div class='dates'>" + month_names[MONTH] + " " + YEAR + "</div>";
 }
 
 

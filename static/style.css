@@ -1,3 +1,8 @@
+body {
+    font-family: "Lato";
+    weight: 400;
+}
+
 .states: hover {
   fill-opacity: .7;
 }
@@ -23,7 +28,7 @@ div.tooltip {
     position: absolute;
     text-align: left;
     padding: 10px;	
-    font: 16px sans-serif;
+    font: 16px "Lato";
     background: white;
     border: 0px;
     border-radius: 4px;
@@ -36,26 +41,33 @@ div.tooltip.table {
 }
 
 #title {
-    font: bold 32px sans-serif;
+    font: bold 34px "Lato";
     color: white;
-    /*text-decoration: underline;*/
+    text-align:center;
+}
+
+.dates {
+    font: bold 16px "Lato";
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-top: 2.5px;
 }
 
 #header {
     margin-top: 0;
     background: #c0392a;
-    padding: 20px;
+    padding: 15px 20px 10px 20px;
 }
 
 #selector {
-    top: 100px;
-    right: 50px;
+    top: 125px;
+    right: 25px;
     position: fixed;
 }
 
 .container {
-    margin-top: 15px;
-    width: 80%
+    margin-top: 20px;
+    width: 80%;
 }
 
 #nav-bot{
@@ -68,7 +80,17 @@ div.tooltip.table {
     color: black;
 }
 
-.cerealkillers {
-    margin-right: 50px;
+.cerealkillers{
+    margin-right: 25px;
+    font-weight:bold;
     color: #c0392a;
+}
+
+.cerealkillers:hover {
+    color: #9a211e;
+    weight: 700;
+}
+
+.fa-pause {
+    color: #9a211e;
 }
