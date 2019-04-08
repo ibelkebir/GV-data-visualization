@@ -57,10 +57,11 @@ div.tooltip.table {
     margin-top: 0;
     background: #c0392a;
     padding: 12.5px 20px 10px 20px;
+    border-radius: 0;
 }
 
 #selector {
-    top: 125px;
+    top: 105px;
     right: 25px;
     position: fixed;
 }
