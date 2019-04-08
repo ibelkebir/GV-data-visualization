@@ -91,15 +91,15 @@ function ready (error, us, murder)
     console.log(base0)
     console.log(base0.innerHTML)
 
-if (type.value == "killed"){
+    if (type.value == "killed"){
 	base0.innerHTML = "Gun Violence Deaths in the States on " + MONTH + "/" + YEAR;
-}
-else if (type.value == "incidents"){
-  base0.innerHTML = "Gun Violence Incidents in the States on " + MONTH + "/" + YEAR;
-}
-else if (type.value == "injuries"){
+    }
+    else if (type.value == "incidents"){
+	base0.innerHTML = "Gun Violence Incidents in the States on " + MONTH + "/" + YEAR;
+    }
+    else {
 	base0.innerHTML = "Gun Violence Injuries in the States on " + MONTH + "/" + YEAR;
-}
+    }
 
 
     svg.append("g")
