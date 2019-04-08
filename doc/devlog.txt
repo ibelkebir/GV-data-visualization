@@ -33,7 +33,7 @@ fabihaT -- 2019-03-31 18:40
 - cleaned up original dataset to produce the base dataset
 
 fabihaT -- 2019-03-31 20:31
-- added in us states 
+- added in us states
 
 fabihaT -- 2019-04-01 23:48
 - cleaned up code for creating map for better readability
@@ -65,3 +65,6 @@ imadB -- 2019-04-04 13:20
 
 fabihaT -- 2019-04-07 23:13
 - fixed bug with urls
+
+imadB -- 2019-04-07 23:20
+- added options for reverse timelapse and changing speed
