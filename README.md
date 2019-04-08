@@ -97,16 +97,22 @@ We will show a choropleth map similar to this one showing frequency of deaths/in
     
 3. Activate your virtual environment
     ```
-    $ . path/to/venv/bin/activate    # for Linux / OS
-    $ source path/to/venv/Scripts/activate    # for Windows
+    $ python3 -m venv venv
+    $ . path/to/venv/bin/activate
     ```
     
-4. Run the python file (starting the Flask server)
+4. Upgrade pip and install the dependencies using `requirements.txt`
+    ```
+    (venv) $ pip install --upgrade pip
+    (venv) $ pip install -r requirements.txt
+    ```
+
+5. Run the python file (starting the Flask server)
     ```
     (venv) $ python app.py
     ```
     
-5. Open one of the following in your browser
+6. Open one of the following in your browser
     ```
     http://127.0.0.1:5000/
     http://localhost:5000/
