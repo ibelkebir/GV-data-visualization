@@ -65,4 +65,10 @@ div.tooltip.table {
 }
 .controls{
     margin: 0 auto;
+    color: black;
+}
+
+.cerealkillers {
+    margin-right: 50px;
+    color: #c0392a;
 }
