@@ -80,22 +80,13 @@ function ready (error, us, murder)
 		       {
 			   gunvioData_killed.set(d.state, +d.n_killed);
 			   gunvioData_injured.set(d.state, +d.n_injured);
-			   gunvioData_incidents.set(d.state, +d.n_injured);
+			   gunvioData_incidents.set(d.state, +d.incidents);
 		       }
 		   })
     //console.log(gunvioData);
     svg.selectAll("g").remove();
 
-console.log(MONTH)
-console.log(YEAR)
-  console.log(months)
-  console.log(months.value)
-  console.log(months.innerText)
-
 base0 = document.getElementById("title")
-
-  console.log(base0)
-
   var month_names = ['','January','February','March','April','May','June','July','August','September','October','November','December']
 
 if (type.value == "killed"){
@@ -107,7 +98,6 @@ else if (type.value == "incidents"){
 else if (type.value == "injuries"){
 	base0.innerHTML = "Gun Violence Injuries in the States<div class='dates'>" + month_names[MONTH] + " " + YEAR + "</div>";
 }
-
 
     svg.append("g")
 	.attr("class", "states")
@@ -151,7 +141,7 @@ else if (type.value == "injuries"){
 		   }
 		   else if (type.value == "incidents")
 		   {
-		       return gunvio_incidents_color( e.n_incidents = gunvioData_incidents.get(e.properties.name) );
+		       return gunvio_incidents_color( e.incidents = gunvioData_incidents.get(e.properties.name) );
 		   }
 		   else
 		   {
