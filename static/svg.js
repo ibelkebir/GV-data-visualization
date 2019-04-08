@@ -13,7 +13,7 @@ butt.addEventListener("click", function(e)
 		      });
 
 var margin = { top: 75, left: 0, right: 0, bottom: 0 };
-var height = 750 - margin.top - margin.bottom;
+var height = 725 - margin.top - margin.bottom;
 var width = 1000 - margin.left - margin.right;
 
 var YEAR;
