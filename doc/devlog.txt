@@ -69,3 +69,6 @@ fabihaT -- 2019-04-07 23:13
 
 imadB -- 2019-04-07 23:20
 - added options for reverse timelapse and changing speed
+
+rachelN -- 2019-04-08 10:00
+- bootsrap
