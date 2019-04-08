@@ -95,7 +95,7 @@ if (type.value == "killed"){
 else if (type.value == "incidents"){
   base0.innerHTML = "Gun Violence Incidents in the States<div class='dates'>" + month_names[MONTH] + " " + YEAR + "</div>";
 }
-else if (type.value == "injuries"){
+else {
 	base0.innerHTML = "Gun Violence Injuries in the States<div class='dates'>" + month_names[MONTH] + " " + YEAR + "</div>";
 }
 
