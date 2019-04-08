@@ -84,7 +84,6 @@ We will show a choropleth map similar to this one showing frequency of deaths/in
 
 ## Launch Codes
 
-### `flask`
 
 1. Clone this repository into your folder of choice
     ```
@@ -102,27 +101,13 @@ We will show a choropleth map similar to this one showing frequency of deaths/in
     $ source path/to/venv/Scripts/activate    # for Windows
     ```
     
-4. Now you can run the python file (starting the Flask server)
+4. Run the python file (starting the Flask server)
     ```
     (venv) $ python app.py
     ```
     
-5. In your browser, open one of the following
+5. Open one of the following in your browser
     ```
     http://127.0.0.1:5000/
     http://localhost:5000/
     ```
-
-### `index.html` <!-- this may or may not die over the weekend -->
-
-You can also open `index.html`. If you want to run in...
-
-  - **Firefox**  
-    Enter `firefox index.html` in terminal
-  
-  - **Chrome**  
-    Close all instances of Chrome and enter `open /Applications/Google\ Chrome.app --args --allow-file-access-from-files` in terminal
-  
-  - **Safari**  
-    Make sure you have access to the developer tools `(Safari > Preferences > Advanced > Show develop in menu bar)`. Go to the develop bar and click `Disable Local File Restrictions`.  
-    Enter `safari index.html` in terminal
