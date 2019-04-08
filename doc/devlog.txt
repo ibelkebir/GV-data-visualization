@@ -96,4 +96,11 @@ imadB -- 2019-04-07 23:20
 - added options for reverse timelapse and changing speed
 
 rachelN -- 2019-04-08 10:00
-- bootsrap
+- bootstrap
+
+fabihaT -- 2019-04-08 13:13
+- fixed hover
+
+rachelN -- 2019-04-08 18:40
+- bootstrap and styling, added icons and stuff
+
