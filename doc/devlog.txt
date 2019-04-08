@@ -26,14 +26,23 @@ rachelN -- 2019-03-27 01:00
 - updated readme with overview
 - moved devlog to /doc
 
+maiR -- 2019-03-27 00:35
+- Worked on readme
+
 imadB -- 2019-03-27 04:00
 - created mock-up and added to readme
+
+maiR -- 2019-03-30 10:42
+- Worked on resolving feedback issues 
 
 fabihaT -- 2019-03-31 18:40
 - cleaned up original dataset to produce the base dataset
 
 fabihaT -- 2019-03-31 20:31
 - added in us states
+
+maiR -- 2019-04-01 13:16
+- Created basic flask app
 
 fabihaT -- 2019-04-01 23:48
 - cleaned up code for creating map for better readability
@@ -60,8 +69,14 @@ rachelN -- 2019-04-02 23:50
 - flask works now - route to /static
 - made tooltips / hover thing clearer
 
+maiR -- 2019-04-02 21:52
+- Found dataset for population and converted to csv
+
 imadB -- 2019-04-04 13:20
 - added timeline that cycles through months and years
+
+maiR -- 2019-04-07 22:40
+- Worked on adding the urls for the gun laws of each state
 
 fabihaT -- 2019-04-07 23:13
 - fixed bug with urls
