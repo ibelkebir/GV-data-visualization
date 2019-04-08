@@ -13,8 +13,8 @@ butt.addEventListener("click", function(e)
 		      });
 
 var margin = { top: 75, left: 0, right: 0, bottom: 0 };
-var height = 900 - margin.top - margin.bottom;
-var width = 960 - margin.left - margin.right;
+var height = 800 - margin.top - margin.bottom;
+var width = 1000 - margin.left - margin.right;
 
 var YEAR;
 var MONTH;
@@ -86,24 +86,21 @@ function ready (error, us, murder)
     //console.log(gunvioData);
     svg.selectAll("g").remove();
 
-    base0 = svg.append("g").append("text")
-            .attr("x", (width / 2))
-            .attr("y", -15 + "px" )
-            .attr("id","title")
-            .attr("text-anchor", "middle")
+base0 = document.getElementById("title")
 
-    if (type.value == "killed")
-    {
-	base0.text("Gun Violence Deaths in the States on " + MONTH + "/" + YEAR);
-    }
-    else if (type.value == "incidents")
-    {
-	base0.text("Gun Violence Incidents in the States on " + MONTH + "/" + YEAR);
-    }
-    else
-    {
-	base0.text("Gun Violence Injuries in the States on " + MONTH + "/" + YEAR);
-    }
+  console.log(base0)
+  console.log(base0.innerHTML)
+
+if (type.value == "killed"){
+	base0.innerHTML = "Gun Violence Deaths in the States on " + MONTH + "/" + YEAR;
+}
+else if (type.value == "incidents"){
+  base0.innerHTML = "Gun Violence Incidents in the States on " + MONTH + "/" + YEAR;
+}
+else if (type.value == "injuries"){
+	base0.innerHTML = "Gun Violence Injuries in the States on " + MONTH + "/" + YEAR;
+}
+
 
     svg.append("g")
 	.attr("class", "states")
@@ -196,7 +193,7 @@ function ready (error, us, murder)
     var ls_w = 20, ls_h = 20;
 
     rect = legend.append("rect")
-	.attr("x", 850)
+	.attr("x", 900)
 	.attr("y", function(d, i){ return height - 200 - (i*ls_h) - 5*ls_h;})
 	.attr("width", ls_w)
 	.attr("height", ls_h)
@@ -222,7 +219,7 @@ function ready (error, us, murder)
 	rect.style("opacity", 1);
 
     legend.append("text")
-	.attr("x", 880)
+	.attr("x", 930)
 	.attr("y", function(d, i){ return height - 200 - (i*ls_h) - 4*ls_h - 10 + 4;})
 	.text(function(d, i){ return legend_labels[i]; });
 

@@ -1,4 +1,4 @@
-.states :hover {
+.states: hover {
   fill-opacity: .7;
 }
 
@@ -37,5 +37,32 @@ div.tooltip.table {
 
 #title {
     font: bold 32px sans-serif;
+    color: white;
     /*text-decoration: underline;*/
+}
+
+#header {
+    margin-top: 0;
+    background: #c0392a;
+    padding: 20px;
+}
+
+#selector {
+    top: 100px;
+    right: 50px;
+    position: fixed;
+}
+
+.container {
+    margin-top: 15px;
+    width: 80%
+}
+
+#nav-bot{
+    margin-bottom: 0;
+    background: white;
+    opacity: .8;
+}
+.controls{
+    margin: 0 auto;
 }

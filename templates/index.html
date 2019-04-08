@@ -7,66 +7,74 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 <body>
 
-  <select id="type" name="type">
-    <option value="killed">killed</option>
-    <option value="injured">injured</option>
-    <option value="incidents">incidents</option>
-  </select>
+  <nav id="header" class="navbar fixed-top">
+    <div x="480" y="-15px" id="title" text-anchor="middle">Gun Violence Deaths in the States on 1/2014</div>
+  </nav>
 
-
-  <select id="years" name="years">
-    <option value="2014">2014</option>
-    <option value="2015">2015</option>
-    <option value="2016">2016</option>
-    <option value="2017">2017</option>
-  </select>
-
-  <select id="months" name="months">
-    <option value="1">January</option>
-    <option value="2">February</option>
-    <option value="3">March</option>
-    <option value="4">April</option>
-    <option value="5">May</option>
-    <option value="6">June</option>
-    <option value="7">July</option>
-    <option value="8">August</option>
-    <option value="9">September</option>
-    <option value="10">October</option>
-    <option value="11">November</option>
-    <option value="12">December</option>
-  </select>
-
-
-  <button id="butt">submit</button>
-  <br>
-  <div class="container">
-      <button type="button" id="fbw" class="btn">
-        <i class="fa fa-fast-backward"></i>
-      </button>
-
-      <button type="button" id="bw" class="btn">
-        <i class="fa fa-backward"></i>
-      </button>
-
-      <button type="button" id="play" class="btn">
-        <i class="fa fa-play"></i>
-      </button>
-
-      <button type="button" id="fw" class="btn">
-        <i class="fa fa-forward"></i>
-      </button>
-
-      <button type="button" id="ffw" class="btn">
-        <i class="fa fa-fast-forward"></i>
-      </button>
+  <div id="selector">
+    <select id="type" name="type">
+      <option value="killed">killed</option>
+      <option value="injured">injured</option>
+      <option value="incidents">incidents</option>
+    </select>
+    <select id="years" name="years">
+      <option value="2014">2014</option>
+      <option value="2015">2015</option>
+      <option value="2016">2016</option>
+      <option value="2017">2017</option>
+    </select>
+    <select id="months" name="months">
+      <option value="1">January</option>
+      <option value="2">February</option>
+      <option value="3">March</option>
+      <option value="4">April</option>
+      <option value="5">May</option>
+      <option value="6">June</option>
+      <option value="7">July</option>
+      <option value="8">August</option>
+      <option value="9">September</option>
+      <option value="10">October</option>
+      <option value="11">November</option>
+      <option value="12">December</option>
+    </select>
+    <button id="butt">submit</button>
   </div>
 
+  <div class="main container">
+    <div class="row">
+      <svg width="1000" height="800" style="margin:0 auto;"></svg>
+    </div>
+  </div>
 
-  <svg width="960" height="700"></svg>
+  <nav id="nav-bot" class="navbar fixed-bottom">
+    <div class="controls">
+        <button type="button" id="fbw" class="btn">
+          <i class="fa fa-fast-backward"></i>
+        </button>
+
+        <button type="button" id="bw" class="btn">
+          <i class="fa fa-backward"></i>
+        </button>
+
+        <button type="button" id="play" class="btn">
+          <i class="fa fa-play"></i>
+        </button>
+
+        <button type="button" id="fw" class="btn">
+          <i class="fa fa-forward"></i>
+        </button>
+
+        <button type="button" id="ffw" class="btn">
+          <i class="fa fa-fast-forward"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
 </body>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://d3js.org/topojson.v1.min.js"></script>
