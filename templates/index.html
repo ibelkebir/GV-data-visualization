@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 
 <link rel="stylesheet" href="static/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <body>
 
@@ -32,7 +36,31 @@
 
   <button id="butt">submit</button>
   <br>
-  <button id="play">play</button>
+  <div class="container">
+      <button type="button" id="button_fbw" class="btn" onclick='buttonRewindPress()'>
+        <i class="fa fa-fast-backward"></i>
+      </button>
+
+      <button type="button" id="button_bw" class="btn" onclick='buttonBackPress()'>
+        <i class="fa fa-backward"></i>
+      </button>
+
+      <button type="button" id="button_play" class="btn" onclick='buttonPlayPress()'>
+        <i class="fa fa-play"></i>
+      </button>
+
+      <button type="button" id="button_stop" class="btn" onclick='buttonStopPress()'>
+        <i class="fa fa-stop"></i>
+      </button>
+
+      <button type="button" id="button_fw" class="btn" onclick='buttonForwardPress()'>
+        <i class="fa fa-forward"></i>
+      </button>
+
+      <button type="button" id="button_ffw" class="btn" onclick='buttonFastforwardPress()'>
+        <i class="fa fa-fast-forward"></i>
+      </button>
+  </div>
 
   <svg width="960" height="700"></svg>
 </body>
