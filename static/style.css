@@ -82,19 +82,24 @@ div.tooltip.table {
     color: black;
 }
 
-.cerealkillers{
-    font-size: 15px;
+.cerealkillers {
+    font-size: 18px;
+    font-weight:bold;
     right: 25px;
     bottom: 15px;
     position: fixed;
     z-index: 10000;
     color: #c0392a;
+    fill: #c0392a;
+    stroke:   #c0392a;
 }
 
 .cerealkillers:hover {
     color: #9a211e;
     font-decoration: none;
     weight: 700;
+    fill: #9a211e;
+    stroke:  #9a211e;
 }
 
 .fa-pause {
