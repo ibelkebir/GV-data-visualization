@@ -110,6 +110,11 @@ function ready (error, us, murder)
 		div.style("left", (d3.event.pageX + 10) + "px")
                     .style("top", (d3.event.pageY + 10) + "px");
 	    })
+	.on("click", function(d)
+	    {
+		
+		window.open("https://lawcenter.giffords.org/category/" + d.properties.name, 'gun laws');
+	    })
 	.style("fill", function(e)
 	       {
 
