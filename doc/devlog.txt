@@ -50,6 +50,7 @@ fabihaT -- 2019-04-01 23:48
 
 rachelN -- 2019-04-01 23:59
 - cleaned up dataset, made into csv
+- resolved feedback issues 
 
 imadB -- 2019-04-02 15:00
 - added legend
