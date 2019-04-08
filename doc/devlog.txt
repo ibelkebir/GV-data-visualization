@@ -53,6 +53,8 @@ fabihaT -- 2019-04-02 19:53
 
 fabihaT -- 2019-04-02 22:26
 - finished adding in hovering mechanism
+- added in changeable title
+- fixed dimensions of map
 
 rachelN -- 2019-04-02 23:50
 - flask works now - route to /static
@@ -60,3 +62,6 @@ rachelN -- 2019-04-02 23:50
 
 imadB -- 2019-04-04 13:20
 - added timeline that cycles through months and years
+
+fabihaT -- 2019-04-07 23:13
+- fixed bug with urls

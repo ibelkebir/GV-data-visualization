@@ -113,7 +113,7 @@ function ready (error, us, murder)
 	.on("click", function(d)
 	    {
 		
-		window.open("https://lawcenter.giffords.org/category/" + d.properties.name, 'gun laws');
+		window.open("https://lawcenter.giffords.org/category/" + d.properties.name.replace(" ", "-"), 'gun laws');
 	    })
 	.style("fill", function(e)
 	       {
@@ -159,30 +159,30 @@ var playing = false;
 var year_vals = ["2014","2015","2016","2017"];
 var month_vals = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 document.getElementById('play').addEventListener('click', function(e) {
-	if(playing) {
-		clearInterval(timer);
-		document.getElementById('play').innerHTML = "play";
-		playing = false;
-	}else{
-		playing = true;
-		document.getElementById('play').innerHTML = "pause";
-		timer = setInterval(function(d) {
-			var YEAR = parseInt(years.value);
-			var MONTH = parseInt(months.value);
-			if(MONTH < 12){
-				months.value = (MONTH + 1) + "";
-			}else{
-				months.value = "1";
-				if(YEAR == 2017){
-					years.value = "2014";
-				}else{
-					years.value = (YEAR + 1) + "";
-				}
-			}
-			d3.queue()
-					.defer(d3.json, "https://d3js.org/us-10m.v2.json")
-					.defer(d3.csv, "static/data/data_source0.csv")
-					.await(ready);
-		}, 1000);
-	}
+    if(playing) {
+	clearInterval(timer);
+	document.getElementById('play').innerHTML = "play";
+	playing = false;
+    }else{
+	playing = true;
+	document.getElementById('play').innerHTML = "pause";
+	timer = setInterval(function(d) {
+	    var YEAR = parseInt(years.value);
+	    var MONTH = parseInt(months.value);
+	    if(MONTH < 12){
+		months.value = (MONTH + 1) + "";
+	    }else{
+		months.value = "1";
+		if(YEAR == 2017){
+		    years.value = "2014";
+		}else{
+		    years.value = (YEAR + 1) + "";
+		}
+	    }
+	    d3.queue()
+		.defer(d3.json, "https://d3js.org/us-10m.v2.json")
+		.defer(d3.csv, "static/data/data_source0.csv")
+		.await(ready);
+	}, 1000);
+    }
 });
