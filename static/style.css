@@ -64,6 +64,7 @@ div.tooltip.table {
     top: 105px;
     right: 25px;
     position: fixed;
+    font-size:15px;
 }
 
 .container {
@@ -82,7 +83,11 @@ div.tooltip.table {
 }
 
 .cerealkillers{
-    margin-right: 25px;
+    font-size: 15px;
+    right: 25px;
+    bottom: 15px;
+    position: fixed;
+    z-index: 10000;
     color: #c0392a;
 }
 

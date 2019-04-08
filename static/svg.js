@@ -107,6 +107,7 @@ else {
 	.attr("d", path)
 	.on("mouseover", function(d)
 	    {
+        d3.select(this).style("opacity",.7);
 		div.transition()
                     .duration(200)
                     .style("opacity", .8);
@@ -118,7 +119,8 @@ else {
                     .style("top", (d3.event.pageY + 10) + "px");
             })
         .on("mouseout", function(d)
-	    {
+	          {
+              d3.select(this).style("opacity",1);
 		div.transition()
                     .duration(500)
                     .style("opacity", 0);
