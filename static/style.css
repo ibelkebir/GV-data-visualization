@@ -56,7 +56,7 @@ div.tooltip.table {
 #header {
     margin-top: 0;
     background: #c0392a;
-    padding: 15px 20px 10px 20px;
+    padding: 12.5px 20px 10px 20px;
 }
 
 #selector {
@@ -87,6 +87,7 @@ div.tooltip.table {
 
 .cerealkillers:hover {
     color: #9a211e;
+    font-decoration: none;
     weight: 700;
 }
 
