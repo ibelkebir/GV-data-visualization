@@ -91,7 +91,7 @@ function ready (error, us, murder)
             .attr("y", -15 + "px" )
             .attr("id","title")
             .attr("text-anchor", "middle")
-    
+
     if (type.value == "killed")
     {
 	base0.text("Gun Violence Deaths in the States on " + MONTH + "/" + YEAR);
@@ -104,7 +104,7 @@ function ready (error, us, murder)
     {
 	base0.text("Gun Violence Injuries in the States on " + MONTH + "/" + YEAR);
     }
-    
+
     svg.append("g")
 	.attr("class", "states")
 	.selectAll("path")
@@ -192,7 +192,7 @@ function ready (error, us, murder)
 
     legend = legend.enter().append("g")
 	.attr("class", "legend");
-    
+
     var ls_w = 20, ls_h = 20;
 
     rect = legend.append("rect")
@@ -234,6 +234,7 @@ var playing = false;
 document.getElementById("fbw").addEventListener('click', function(e) {
 	playing = true;
 	clearInterval(timer);
+	document.getElementsByTagName('i')[2].setAttribute('class', 'fa fa-pause');
 	//document.getElementById('play').select('i').attr('class', 'fa fa-pause') ;
 	timer = setInterval(function(d) {
 		var YEAR = parseInt(years.value);
@@ -258,6 +259,7 @@ document.getElementById("fbw").addEventListener('click', function(e) {
 document.getElementById("bw").addEventListener('click', function(e) {
 	playing = true;
 	clearInterval(timer);
+	document.getElementsByTagName('i')[2].setAttribute('class', 'fa fa-pause');
 	//document.getElementById('play').select('i').attr('class', 'fa fa-pause') ;
 	timer = setInterval(function(d) {
 		var YEAR = parseInt(years.value);
@@ -282,6 +284,7 @@ document.getElementById("bw").addEventListener('click', function(e) {
 document.getElementById("fw").addEventListener('click', function(e) {
 	playing = true;
 	clearInterval(timer);
+	document.getElementsByTagName('i')[2].setAttribute('class', 'fa fa-pause');
 	//document.getElementById('play').select('i').attr('class', 'fa fa-pause') ;
 	timer = setInterval(function(d) {
 		var YEAR = parseInt(years.value);
@@ -306,6 +309,7 @@ document.getElementById("fw").addEventListener('click', function(e) {
 document.getElementById("ffw").addEventListener('click', function(e) {
 	playing = true;
 	clearInterval(timer);
+	document.getElementsByTagName('i')[2].setAttribute('class', 'fa fa-pause');
 	//document.getElementById('play').select('i').attr('class', 'fa fa-pause') ;
 	timer = setInterval(function(d) {
 		var YEAR = parseInt(years.value);
@@ -330,12 +334,12 @@ document.getElementById("ffw").addEventListener('click', function(e) {
 document.getElementById("play").addEventListener('click', function(e) {
 	if(playing) {
 		clearInterval(timer);
-		document.getElementById('play').select('i').attr('class', 'fa fa-play');
+		document.getElementsByTagName('i')[2].setAttribute('class', 'fa fa-play');
 		playing = false;
 	}else{
 		playing = true;
 		clearInterval(timer);
-		//console.log(document.getElementById('i').select('i').attr('class', 'fa fa-pause') ;
+		document.getElementsByTagName('i')[2].setAttribute('class', 'fa fa-pause');
 		timer = setInterval(function(d) {
 			var YEAR = parseInt(years.value);
 			var MONTH = parseInt(months.value);
