@@ -92,14 +92,14 @@ div.tooltip.table {
     z-index: 10000;
     color: #c0392a;
     fill: #c0392a;
-    stroke:   #c0392a;
+    stroke: #c0392a;
+    text-decoration: none;
 }
 
 #cerealkillers:hover {
-    text-decoration: none;
     color: #9a211e;
     fill: #9a211e;
-    stroke:  #9a211e;
+    stroke: #9a211e;
 }
 
 #gun_icon {
