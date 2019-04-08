@@ -96,10 +96,13 @@ div.tooltip.table {
 
 .cerealkillers:hover {
     color: #9a211e;
-    font-decoration: none;
     weight: 700;
     fill: #9a211e;
     stroke:  #9a211e;
+}
+
+.cerealkillers:hover a {
+    font-decoration: none;
 }
 
 .fa-pause {
