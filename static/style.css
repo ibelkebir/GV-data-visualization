@@ -55,7 +55,7 @@ div.tooltip.table {
 
 #header {
     margin-top: 0;
-    background: #c0392a;
+    background: #9a211e; /* #c0392a; */
     padding: 12.5px 20px 10px 20px;
     border-radius: 0;
 }
@@ -68,7 +68,7 @@ div.tooltip.table {
 }
 
 .container {
-    margin-top: 20px;
+    margin-top: 25px;
     width: 80%;
 }
 
@@ -82,7 +82,7 @@ div.tooltip.table {
     color: black;
 }
 
-.cerealkillers {
+#cerealkillers {
     font-size: 18px;
     font-weight:bold;
     right: 25px;
@@ -94,15 +94,29 @@ div.tooltip.table {
     stroke:   #c0392a;
 }
 
-.cerealkillers:hover {
+#cerealkillers:hover {
+    text-decoration: none;
     color: #9a211e;
-    weight: 700;
     fill: #9a211e;
     stroke:  #9a211e;
 }
 
-.cerealkillers:hover a {
-    font-decoration: none;
+#wheat_icon {
+    fill: #c0392a;
+    stroke:   #c0392a;
+}
+
+#wheat_icon {
+    fill: #9a211e;
+    stroke:  #9a211e;
+}
+
+
+#gun_icon {
+    left: calc(50% - 333px);
+    top: 12.5px;
+    position: fixed;
+    z-index: 10000 !important;
 }
 
 .fa-pause {
