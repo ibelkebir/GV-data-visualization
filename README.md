@@ -58,7 +58,7 @@ There will be a period from one month to the next in which the colors transition
 ### Responsiveness and User Interaction 
 When hovering over a state the user will be presented exact information on how many injuries/deaths were caused, how many incidents occurred, and how many incidents were cases with legal/stolen guns.
 
-<img src="https://github.com/ibelkebeer/cerealKillers/blob/master/doc/map_hover.gif?raw=true">
+<img src="https://github.com/ibelkebeer/cerealKillers/blob/master/doc/img/map_hover.gif?raw=true">
 <sup><a href="https://vida.io/documents/4vZ9mRGyepoyQxFcK">Example of choropleth with hover</a></sup>
 
 ## References [(D3 Gallery)](github.com/d3/d3/wiki/Gallery)
@@ -69,17 +69,17 @@ When hovering over a state the user will be presented exact information on how m
 
 The graph will depict a time lapse of gun violence incidents from 2013 to 2018.
 
-<img src="https://github.com/ibelkebeer/cerealKillers/blob/master/doc/timelapse.gif?raw=true">
+<img src="https://github.com/ibelkebeer/cerealKillers/blob/master/doc/img/timelapse.gif?raw=true">
 
 ### [Choropleth](https://observablehq.com/@d3/choropleth)
 
 We will show a choropleth map similar to this one showing frequency of deaths/injuries/incidents per state per month.
 
-<img src="https://github.com/ibelkebeer/cerealKillers/blob/master/doc/choropleth.png?raw=true">
+<img src="https://github.com/ibelkebeer/cerealKillers/blob/master/doc/img/choropleth.png?raw=true">
 
 ## Mock-up
 
-<img src="https://github.com/ibelkebeer/cerealKillers/blob/master/doc/map.png?raw=true">
+<img src="https://github.com/ibelkebeer/cerealKillers/blob/master/doc/img/map.png?raw=true">
 
 ## Launch Codes
 
